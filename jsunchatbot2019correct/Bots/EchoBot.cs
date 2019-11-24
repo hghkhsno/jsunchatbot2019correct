@@ -71,7 +71,7 @@ namespace jsunchatbot2019correct.Bots
         {
 
             //股票常識
-            if (StringExtensions.Contains(turnContext.Activity.Text, "股票常識", 0))
+           /* if (StringExtensions.Contains(turnContext.Activity.Text, "股票常識", 0))
             {
 
                 // Create a HeroCard with options for the user to interact with the bot.
@@ -93,7 +93,7 @@ namespace jsunchatbot2019correct.Bots
                 await turnContext.SendActivityAsync(reply, cancellationToken);
             }
 
-
+            */
 
 
 
@@ -139,6 +139,8 @@ namespace jsunchatbot2019correct.Bots
             }
             catch (FormatException)
             {
+
+                await turnContext.SendActivityAsync(CreateActivityWithTextAndSpeak("FormatException"), cancellationToken);
                 // the FormatException is thrown when the string text does 
                 // not represent a valid integer.
             }
