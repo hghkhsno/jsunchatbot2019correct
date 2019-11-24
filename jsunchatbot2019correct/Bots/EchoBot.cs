@@ -70,10 +70,39 @@ namespace jsunchatbot2019correct.Bots
         protected override async Task OnMessageActivityAsync(ITurnContext<IMessageActivity> turnContext, CancellationToken cancellationToken)
         {
 
+            //股票常識
+            if (StringExtensions.Contains(turnContext.Activity.Text, "股票常識", 0))
+            {
+
+                // Create a HeroCard with options for the user to interact with the bot.
+                var card = new HeroCard
+                {
+                    Text = "股票名詞很多種?你想先從什麼開始呢?可以直接輸入或選擇下方的按鈕唷",
+                    Buttons = new List<CardAction>
+        {
+            // Note that some channels require different values to be used in order to get buttons to display text.
+            // In this code the emulator is accounted for with the 'title' parameter, but in other channels you may
+            // need to provide a value for other parameters like 'text' or 'displayText'.
+            new CardAction(ActionTypes.ImBack, title: "什麼是違約交割", value: "什麼是違約交割"),
+            new CardAction(ActionTypes.ImBack, title: "當沖?是吃的嗎", value: "當沖?是吃的嗎"),
+            new CardAction(ActionTypes.ImBack, title: "我想做信用交易", value: "我想做信用交易"),
+        },
+                };
+
+                var reply = MessageFactory.Attachment(card.ToAttachment());
+                await turnContext.SendActivityAsync(reply, cancellationToken);
+            }
+
+
+
+
+
+
             //當沖
             if (StringExtensions.Contains(turnContext.Activity.Text, stockDayTrade, 0))
             {
                 await turnContext.SendActivityAsync(CreateActivityWithTextAndSpeak(stockDayTradeinformation), cancellationToken);
+                
             }
 
             //違約交割
