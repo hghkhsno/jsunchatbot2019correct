@@ -101,7 +101,7 @@ namespace jsunchatbot2019correct.Bots
             //·í¨R
           //  if (StringExtensions.Contains(turnContext.Activity.Text, stockDayTrade, 0))
            // {
-                await turnContext.SendActivityAsync(CreateActivityWithTextAndSpeak("´ú¸Õ"), cancellationToken);
+                await turnContext.SendActivityAsync(CreateActivityWithTextAndSpeak("´ú¸Õ123"), cancellationToken);
                 
           //  }
 
