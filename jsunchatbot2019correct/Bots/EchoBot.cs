@@ -127,7 +127,7 @@ namespace jsunchatbot2019correct.Bots
 
             }
 
-
+            /*
             try
             {
                 if (System.Convert.ToInt32(turnContext.Activity.Text)!=0) {
@@ -151,7 +151,7 @@ namespace jsunchatbot2019correct.Bots
                 // this case.
             }
 
-
+            */
 
 
 
