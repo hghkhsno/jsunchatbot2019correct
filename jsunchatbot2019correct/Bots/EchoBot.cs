@@ -101,9 +101,9 @@ namespace jsunchatbot2019correct.Bots
             //當沖
           //  if (StringExtensions.Contains(turnContext.Activity.Text, stockDayTrade, 0))
            // {
-                await turnContext.SendActivityAsync(CreateActivityWithTextAndSpeak("測試123"), cancellationToken);
-                
-          //  }
+               // await turnContext.SendActivityAsync(CreateActivityWithTextAndSpeak("測試123"), cancellationToken);
+                await turnContext.SendActivityAsync(CreateActivityWithTextAndSpeak($"Echo中文: {turnContext.Activity.Text}"), cancellationToken);
+            //  }
 
             //違約交割
             if (StringExtensions.Contains(turnContext.Activity.Text, nomoney, 0))
